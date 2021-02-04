@@ -130,6 +130,8 @@ namespace Microsoft.AspNetCore.Razor.Language
             }
         }
 
+        internal RazorSourceDocument SourceDocument { get; set; }
+
         private string DebuggerToString()
         {
             return CombinedPath;
