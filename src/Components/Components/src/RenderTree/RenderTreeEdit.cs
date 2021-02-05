@@ -53,12 +53,14 @@ namespace Microsoft.AspNetCore.Components.RenderTree
         private RenderTreeEdit(RenderTreeEditType type) : this()
         {
             Type = type;
+            RemovedAttributeName = default!;
         }
 
         private RenderTreeEdit(RenderTreeEditType type, int siblingIndex) : this()
         {
             Type = type;
             SiblingIndex = siblingIndex;
+            RemovedAttributeName = default!;
         }
 
         private RenderTreeEdit(RenderTreeEditType type, int siblingIndex, int referenceFrameOrMoveToSiblingIndex) : this()
@@ -69,6 +71,7 @@ namespace Microsoft.AspNetCore.Components.RenderTree
             // MoveToSiblingIndex is stored in the same slot as ReferenceFrameIndex,
             // so assigning to either one is equivalent
             ReferenceFrameIndex = referenceFrameOrMoveToSiblingIndex;
+            RemovedAttributeName = default!;
         }
 
         private RenderTreeEdit(RenderTreeEditType type, int siblingIndex, string removedAttributeName) : this()
